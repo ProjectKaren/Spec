@@ -5,20 +5,23 @@
 ### DOM Element
 
 Slots  
-* `name` keyword
-* `attributes` (keyword . css-unit) a-list
-* `parent` dom-element
+* `ident` keyword
+* `name` string
+* `attributes` (keyword . css-value) a-list
+* `parent` dom-element | nil
 * `children` dom-element list
-* `previous` dom-element
-* `next` dom-element
+* `previous` dom-element | nil
+* `next` dom-element | nil
+
+The `ident` can be taken `html`, `body`, `h1`, `a`, and so on.
 
 #### CSS Value
 
 Slots  
-* `value` any
-* `sign` keyword
+* `data` any
+* `unit` keyword | nil
 
-The `sign` can be taken `px`, `%`, `em`, `vw`, `vh`, and so on.
+The `unit` can be taken `px`, `%`, `em`, `vw`, `vh`, and so on.
 
 
 ### Render Object
@@ -39,11 +42,11 @@ Associate
 #### Render Style
 
 Slots  
-* `background` renderer-box-fill nil
-* `margin` renderer-box-fill nil
-* `padding` renderer-box-fill nil
-* `border` renderer-box-stroke nil
-* `text` renderer-font nil
+* `background` renderer-box-fill | nil
+* `margin` renderer-box-fill | nil
+* `padding` renderer-box-fill | nil
+* `border` renderer-box-stroke | nil
+* `text` renderer-text | nil
 
 
 #### Clip Layer
@@ -61,4 +64,4 @@ Slots
 
 Slots  
 * `name` string
-* `phase` (float . render-style) a-list
+* `anchor` (float . render-style) a-list
